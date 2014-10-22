@@ -14,6 +14,7 @@ The order of the JSON would vary slightly, but the desired data could often be t
 ```python
 from collections import OrderedDict
 from hashlib import md5
+import json
 
 data_one = OrderedDict((
     ('a', [
