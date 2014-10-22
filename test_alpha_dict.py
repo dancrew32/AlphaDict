@@ -3,6 +3,7 @@ from collections import OrderedDict
 from alpha_dict import AlphaDict
 from random import choice
 import string
+import hashlib
 
 
 class AlphaDictTestCase(TestCase):
@@ -215,4 +216,33 @@ class AlphaDictTestCase(TestCase):
             ]),
         ))
         self.assertEqual(a, b)
+
+    def test_hash(self):
+        a = OrderedDict((
+            ('a', [
+                OrderedDict((
+                    ('a', 1),
+                    ('c', 1),
+                    ('b', 1),
+                )),
+            ]),
+        ))
+        b = OrderedDict((
+            ('a', [
+                OrderedDict((
+                    ('c', 1),
+                    ('b', 1),
+                    ('a', 1),
+                )),
+            ]),
+        ))
+        self.assertNotEqual(a, b)
+
+        a = AlphaDict(a)
+        b = AlphaDict(b)
+        self.assertEqual(a, b)
+
+        hash_a = hashlib.md5(str(a)).hexdigest()
+        hash_b = hashlib.md5(str(b)).hexdigest()
+        self.assertEqual(hash_a, hash_b)
 
