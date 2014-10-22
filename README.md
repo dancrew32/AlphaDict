@@ -23,7 +23,7 @@ data_one = OrderedDict((
     ]), 
 ))  
 
-data_two = json.loads(request.body, object_pairs_hook=collections.OrderedDict)
+data_two = json.loads(request.body, object_pairs_hook=OrderedDict)
 """
 Somehow, the front-end sent us this for data_two:
 OrderedDict((
