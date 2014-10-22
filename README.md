@@ -2,8 +2,8 @@
 
 Recursively sorts dictionaries by key. 
 
-Useful for determining if the hash of two dicts that contain identical data,
-but are in slightly different orders, are the same.
+Useful for determining the equality of two `OrderedDicts` that contain identical data,
+but have data with keys in slightly different orders.
 
 ## Scenario
 
