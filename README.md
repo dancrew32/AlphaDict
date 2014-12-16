@@ -48,7 +48,12 @@ self.assertEqual(data_one, data_two)
 
 Let's correct this with `AlphaDict`:
 
+```bash
+pip install alphadict
+```
+
 ```python
+from alphadict import AlphaDict
 a = AlphaDict(data_one)
 b = AlphaDict(data_two)
 
