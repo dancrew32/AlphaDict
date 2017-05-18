@@ -10,7 +10,7 @@ class AlphaDict(OrderedDict):
 
     def __sort_my_thing(self):
         sorted = self.key_sort()
-        for k, v in sorted.iteritems():
+        for k, v in sorted.items():
             del self[k]
             super(AlphaDict, self).__setitem__(k, v)
 
